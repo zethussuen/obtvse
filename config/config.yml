@@ -1,8 +1,8 @@
 ---
 title:               Zethus Suen
 tagline:             UI/UX Designer.
-login:               <%= ENV["obtvse_login"] ? ENV["obtvse_login"] : "zethus" %>
-password:            <%= ENV["obtvse_password"] ? ENV["obtvse_password"] : "orly4603" %>
+login:               <%= ENV["obtvse_login"] ? ENV["obtvse_login"] : "username" %>
+password:            <%= ENV["obtvse_password"] ? ENV["obtvse_password"] : "password" %>
 name:                Zethus Suen
 twitter:             zethussuen
 github:              zethussuen
