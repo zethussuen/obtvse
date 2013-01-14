@@ -21,10 +21,12 @@
       <% if CONFIG['github'] %>
         <li><%= link_to 'github', 'https://github.com/' + CONFIG['github'] %></li>
       <% end %>
+      <% if CONFIG['dribbble'] %>
+        <li><%= link_to 'dribbble', 'http://dribbble.com/' + CONFIG['dribbble'] %></li>
+      <% end %>
       <% if CONFIG['email'] %>
         <li><%= link_to 'say hi', "mailto:#{CONFIG['email']}?subject:whats up!" %></li>
       <% end %>
-      <li><%= link_to 'rss feed', '/posts.rss' %></li>
     </ul>
     <span class="powered-by">
       Powered by <a href="http://github.com/natew/obtvse.git">Obtvse</a>

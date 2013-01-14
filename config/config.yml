@@ -7,5 +7,6 @@ name:                Zethus Suen
 twitter:             zethussuen
 github:              zethussuen
 email:               zethus.suen@gmail.com
+dribbble:            zethussuen
 google_analytics_id: UA-35067168-1
 disqus_shortname:    <%= ENV.fetch("disqus_shortname") { "" } %>
