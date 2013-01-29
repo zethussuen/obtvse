@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   def show
     @single_post = true
-    @post = Post.find_by_slug_and_draft(params[:slug])
+    @post = Post.find_by_slug_and_draft(params[:slug], false)
 
     respond_to do |format|
       if @post.present?
