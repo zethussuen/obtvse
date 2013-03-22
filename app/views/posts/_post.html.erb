@@ -6,7 +6,20 @@
         <%= link_to '⚓', post.slug, :class => 'permalink' %>
       </h1>
     <%- else -%>
-      <h1><% if @single_post %><%= post.title %><% else %><%= link_to post.title, post.slug %><% end %></h1>
+      <h1>
+        <% if @single_post %>
+          <%= post.title %>
+        <% else %>
+          <%= link_to post.title, post.slug %>
+        <% end %>
+        
+        <%- if is_admin? -%>
+          <span class="edit-post"><em><%= link_to 'edit', '/edit/' + post.id.to_s unless @preview %></em></span>
+        <%- end -%>
+        <div class="posted-at">Posted on <%= post.created_at.to_formatted_s(:day_month_year) %>
+        </div>
+       </h1>
+      <div class="title-divider"></div>
     <%- end -%>
 
     <% if post.has_more_tag && !@single_post && !@preview %>
@@ -16,11 +29,6 @@
       <% if post.content %><%= markdown(post.content).to_html.html_safe %><% end %>
     <% end %>
 
-    <%- if is_admin? -%>
-      <ul class="actions">
-        <li><%= link_to 'Edit', '/edit/' + post.id.to_s unless @preview %></li>
-      </ul>
-    <%- end -%>
     <% if @single_post %>
       <a class="button space-top space-bottom" href="<%= root_url %>">Back to Blog</a>
       <%= render 'posts/comments' %>

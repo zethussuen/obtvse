@@ -1,1 +1,156 @@
-/* Insert your custom theme here */
+$serif: coranto-2, serif;
+$sans-serif: urbana, helvetica, arial, sans-serif;
+
+$link: #222222;
+$link-hover: #D95B43;
+$span: #464646;
+$span-light: #646464;
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 150%;
+  color: $span;
+}
+
+p, span {
+  font-family: $serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 200%;
+  color: $span;
+}
+
+a,
+a:visited,
+a:active {
+  color: $link;
+  text-decoration: none;
+  border: 0;
+  &.button {
+    color: #ffffff;
+  }
+}
+
+a:hover {
+  color: $link-hover;
+}
+
+header {
+  position: static;
+  width: 100%; height: auto;
+  padding: 20px 0; margin: 0 auto;
+  overflow: auto;
+  border: 0;
+  .header { width: 70%; margin: 0 auto; }
+  .brand {
+    padding: 0; margin: 0;
+    width: 220px;
+    float: left;
+
+    .brand__logo {
+      padding: 0; margin: 0;
+      line-height: 90%;
+      a { color: $link-hover; }
+    }
+    .brand__tagline {
+      color: $span-light;
+      line-height: 100%;
+    }
+  }
+
+  .nav {
+    float: right;
+    width: auto;
+    text-align: right;
+    ul {
+      padding: 0; margin: 20px 0 0;
+      li {
+        padding: 0; margin: 0 1.8em 0 0;
+        &:last-child {
+          margin-right: 0;
+        }
+        display: inline-block;
+        a {
+          font-family: $serif;
+          font-weight: 400;
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+.cover {
+  width: 100%;
+  height: 400px;
+  background: image-url('cover-fuji.jpg') no-repeat left center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+.container {
+  width: 100%;
+  padding: 0; margin: 0;
+}
+
+.content {
+  border: 0;
+}
+
+// post wrapper
+.contain {
+  margin: 0 auto;
+  width: 70%;
+}
+
+// the actual post 
+.post {
+  h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+  }
+  .edit-post {
+    a {color: #999;}
+    font-size: 1rem;
+    font-family: $serif;
+    text-decoration: underline;
+    font-weight: 400;
+  }
+  .posted-at {
+    float: right;
+    font-size: 1rem;
+    color: #999;
+    font-weight: 400;
+    padding: 0; margin: 0;
+  }
+  .title-divider{
+    width: 100%;
+    height: 1px;
+    background-color: #d0d0d0;
+    margin: 5px 0 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .brand {
+    width: 100% !important;
+    float: none !important;
+    text-align: center;
+    .brand__tagline { display: none; }
+  }
+  .nav { float: none !important; text-align: center !important; }
+
+  .post {
+    h1,h2,h3,h4,h5,h6 {
+      text-align: center;
+      line-height: 100%;
+    }
+    .posted-at {
+      float: none !important;
+      text-align: center;
+    }
+  }
+}

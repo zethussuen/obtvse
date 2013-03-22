@@ -15,7 +15,6 @@ body {
 }
 
 body, textarea, pre, input {
-  font-family: 'Lato', Helvetica, sans-serif;
   line-height: 1.8em;
   font-size: 16px;
   font-weight: 400;
@@ -91,23 +90,9 @@ header {
   }
 }
 
-#container {
-  margin-left: 243px;
-  position: relative;
-
-  time {
-    display: block;
-    padding: 20px 0 20px 50px;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 12px;
-    border-bottom: 1px solid #ddd;
-  }
-}
-
 #content {
   section {
-    padding: 26px 0 40px 50px;
+    padding: 20px 0 40px;
     border-bottom: 1px solid #ddd;
     position: relative;
   }

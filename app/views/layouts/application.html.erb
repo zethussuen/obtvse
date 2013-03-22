@@ -5,42 +5,44 @@
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'application' %>
   <meta name="author" content="<%= CONFIG['name'] %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/posts.rss" rel="alternate" title="RSS" type="application/rss+xml" />
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,900' rel='stylesheet' type='text/css' />
+  <script type="text/javascript" src="//use.typekit.net/sbd3ukk.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body class="<%= controller_name %> <%= action_name %>">
   <% unless @no_header %>
   <header>
-    <h1><%= link_to CONFIG['title'], root_url %></h1>
-    <span><%= CONFIG['tagline'].html_safe %></span>
-    <ul>
-      <% if CONFIG['twitter'] %>
-        <li><%= link_to '@' + CONFIG['twitter'], 'http://twitter.com/' + CONFIG['twitter'] %></li>
-      <% end %>
-      <% if CONFIG['github'] %>
-        <li><%= link_to 'github', 'https://github.com/' + CONFIG['github'] %></li>
-      <% end %>
-      <% if CONFIG['dribbble'] %>
-        <li><%= link_to 'dribbble', 'http://dribbble.com/' + CONFIG['dribbble'] %></li>
-      <% end %>
-      <% if CONFIG['email'] %>
-        <li><%= link_to 'say hi', "mailto:#{CONFIG['email']}?subject:whats up!" %></li>
-      <% end %>
-    </ul>
-    <span class="powered-by">
-      Powered by <a href="http://github.com/natew/obtvse.git">Obtvse</a>
-      <% if is_admin? %> &nbsp;&middot;&nbsp; <a href="/admin">Admin</a><% end %>
-  </span>
-
+    <div class="header">
+      <div class="brand">
+        <h1 class="brand__logo"><%= link_to CONFIG['title'], root_url %></h1>
+        <span class="brand__tagline"><%= CONFIG['tagline'].html_safe %></span>
+      </div>
+      <div class="nav">
+        <ul>
+          <li><%= link_to 'About Me', '#' %></li>
+          <% if CONFIG['dribbble'] %>
+            <li><%= link_to 'Dribbble', 'http://dribbble.com/' + CONFIG['dribbble'] %></li>
+          <% end %>
+          <% if CONFIG['twitter'] %>
+            <li><%= link_to '@' + CONFIG['twitter'], 'http://twitter.com/' + CONFIG['twitter'] %></li>
+          <% end %>
+          <% if CONFIG['github'] %>
+            <!-- <li><%= link_to 'Code', 'https://github.com/' + CONFIG['github'] %></li> -->
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </header>
   <% end %>
 
-  <div id="container">
-    <% unless @no_header %>
-      <time><% if @post && @post.created_at %>Posted <%= @post.created_at.to_formatted_s(:day_month_year) %><% else %><%= Time.now.to_formatted_s(:day_month_year) %><% end %></time>
-    <% end %>
-    <div id="content">
+  <div class="cover">
+
+  </div>
+
+  <div class="container" id="container">
+    <div class="content" id="content">
       <% if notice %><span class="notice"><%= notice %></span><% end %>
       <%= yield %>
     </div>
