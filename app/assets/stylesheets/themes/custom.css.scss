@@ -3,7 +3,7 @@ $sans-serif: urbana, helvetica, arial, sans-serif;
 
 $link: #222222;
 $link-hover: #D95B43;
-$span: #464646;
+$span: #444;
 $span-light: #646464;
 
 h1,h2,h3,h4,h5,h6 {
@@ -18,8 +18,12 @@ p, span {
   font-family: $serif;
   font-size: 18px;
   font-weight: 300;
-  line-height: 200%;
+  line-height: 230%;
   color: $span;
+}
+
+p {
+  text-indent: 2.5em;
 }
 
 a,
@@ -112,6 +116,7 @@ header {
   h1,h2,h3,h4,h5,h6 {
     margin: 0;
   }
+  p a { color: $link-hover; }
   .edit-post {
     a {color: #999;}
     font-size: 1rem;
@@ -152,6 +157,5 @@ header {
       float: none !important;
       text-align: center;
     }
-    a { color: $link-hover; }
   }
 }
