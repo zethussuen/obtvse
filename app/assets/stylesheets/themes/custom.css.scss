@@ -1,4 +1,4 @@
-@mixin colorize($animationName: linkColorize, $duration: 2s) {
+@mixin colorize($animationName: linkColorize, $duration: .25s) {
   -webkit-animation: $animationName $duration ease-in;
   -webkit-fill-mode: forwards;
   -moz-animation: $animationName $duration ease-in;
