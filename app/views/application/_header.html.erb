@@ -1,0 +1,24 @@
+<% unless @no_header %>
+  <header>
+    <div class="header">
+      <div class="brand">
+        <h1 class="brand__logo"><%= link_to CONFIG['title'], root_url %></h1>
+        <span class="brand__tagline"><%= CONFIG['tagline'].html_safe %></span>
+      </div>
+      <div class="nav">
+        <ul>
+          <li><%= link_to 'About Me', about_site_index_path %></li>
+          <% if CONFIG['dribbble'] %>
+            <li><%= link_to 'Dribbble', 'http://dribbble.com/' + CONFIG['dribbble'] %></li>
+          <% end %>
+          <% if CONFIG['twitter'] %>
+            <li><%= link_to '@' + CONFIG['twitter'], 'http://twitter.com/' + CONFIG['twitter'] %></li>
+          <% end %>
+          <% if CONFIG['github'] %>
+            <!-- <li><%= link_to 'Code', 'https://github.com/' + CONFIG['github'] %></li> -->
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </header>
+<% end %>

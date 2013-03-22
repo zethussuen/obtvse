@@ -107,6 +107,10 @@ header {
      -moz-background-size: cover;
        -o-background-size: cover;
           background-size: cover;
+  &.cover--about {
+    background: image-url('cover-about.jpg') no-repeat center center;
+    height: 350px;
+  }
 }
 
 .container {

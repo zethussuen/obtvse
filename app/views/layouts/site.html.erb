@@ -14,12 +14,11 @@
 
 <body class="<%= controller_name %> <%= action_name %>">
   <%= render :partial => 'application/header' %>
-
-  <div class="cover"></div>
-
+  
+  <div class="cover cover--about"></div>
+  
   <div class="container" id="container">
     <div class="content" id="content">
-      <% if notice %><span class="notice"><%= notice %></span><% end %>
       <%= yield %>
     </div>
   </div>
@@ -35,14 +34,5 @@
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
   <% end %>
-
-  <script>
-    $(function(){
-      var random = Math.floor(Math.random()*3);
-      var images = ['bridge', 'bridge', 'bridge'];
-
-      $('.cover').css('background', 'url("/assets/cover-' + images[random] + '.jpg") no-repeat left center');
-    });
-  </script>
 </body>
 </html>

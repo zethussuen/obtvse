@@ -8,5 +8,13 @@ Obtvse::Application.routes.draw do
   get '/:slug', :to => 'posts#show', :as => 'post'
   delete '/:slug', :to => 'posts#destroy', :as  => 'post'
   put '/:slug', :to => 'posts#update', :as  => 'post'
+  
+  
+  resources :site, :only => [] do
+    collection do 
+      get 'about'
+    end
+  end
+
   root :to => 'posts#index'
 end
