@@ -113,6 +113,7 @@ header {
 
 // the actual post 
 .post {
+  position: relative;
   h1,h2,h3,h4,h5,h6 {
     margin: 0;
   }
@@ -125,11 +126,14 @@ header {
     font-weight: 400;
   }
   .posted-at {
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
     font-size: 1rem;
     color: #999;
     font-weight: 400;
-    padding: 0; margin: 0;
+    padding: 0; margin: 30px 0 10px;
+    line-height: 100%;
   }
   .title-divider{
     width: 100%;
@@ -154,8 +158,9 @@ header {
       line-height: 100%;
     }
     .posted-at {
-      float: none !important;
       text-align: center;
+      margin: 20px 0;
+      position: relative;
     }
   }
 }
