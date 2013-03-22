@@ -30,6 +30,9 @@ a:active {
   border: 0;
   &.button {
     color: #ffffff;
+    &:hover {
+      background-color: $link-hover;
+    }
   }
 }
 
