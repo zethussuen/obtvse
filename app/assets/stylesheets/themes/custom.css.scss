@@ -48,10 +48,12 @@ header {
     padding: 0; margin: 0;
     width: 220px;
     float: left;
-
     .brand__logo {
       padding: 0; margin: 0;
       line-height: 90%;
+      opacity: 0;
+      -webkit-animation: brand 1s ease-in;
+      -webkit-animation-fill-mode:forwards;
       a { color: $link-hover; }
     }
     .brand__tagline {
@@ -159,4 +161,9 @@ header {
       position: relative;
     }
   }
+}
+
+@-webkit-keyframes brand {
+  0% { opacity: 0; -webkit-transform: translateY(-100px); }
+  100% { opacity: 1;  }
 }
