@@ -1,3 +1,12 @@
+@mixin colorize($animationName: linkColorize, $duration: 2s) {
+  -webkit-animation: $animationName $duration ease-in;
+  -webkit-fill-mode: forwards;
+  -moz-animation: $animationName $duration ease-in;
+  -moz-fill-mode: forwards;
+  -o-animation: $animationName $duration ease-in;
+  -o-fill-mode: forwards;
+}
+
 $serif: coranto-2, serif;
 $sans-serif: urbana, helvetica, arial, sans-serif;
 
@@ -28,16 +37,20 @@ a:active {
   color: $link;
   text-decoration: none;
   border: 0;
-  &.button {
-    color: #ffffff;
-    &:hover {
-      background-color: $link-hover;
-    }
-  }
 }
 
 a:hover {
+  @include colorize;
   color: $link-hover;
+}
+
+a.button {
+  color: #ffffff;
+  &:hover {
+    color: #fff;
+    background-color: $link-hover;
+    @include colorize(buttonColorize, .15s);
+  }
 }
 
 header {
@@ -169,4 +182,14 @@ header {
 @-webkit-keyframes brand {
   0% { opacity: 0; -webkit-transform: translateY(-100px); }
   100% { opacity: 1;  }
+}
+
+@-webkit-keyframes linkColorize {
+  0% { color: $link; }
+  100% { color: $link-hover; }
+}
+
+@-webkit-keyframes buttonColorize {
+  0% { background-color: $link; color: #fff; }
+  100% { background-color: $link-hover; color: #fff; }
 }
