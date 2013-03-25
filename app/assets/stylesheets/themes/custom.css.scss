@@ -59,7 +59,7 @@ header {
   padding: 20px 0; margin: 0 auto;
   overflow: auto;
   border: 0;
-  .header { width: 70%; margin: 0 auto; }
+  .header { width: 70%; max-width: 640px;  margin: 0 auto; }
   .brand {
     padding: 0; margin: 0;
     width: 220px;
@@ -126,6 +126,7 @@ header {
 .contain {
   margin: 0 auto;
   width: 70%;
+  max-width: 640px;
 }
 
 // the actual post 
@@ -133,6 +134,8 @@ header {
   position: relative;
   h1,h2,h3,h4,h5,h6 {
     margin: 0;
+    max-width: 490px;
+    line-height: 110%;
   }
   p a { color: $link-hover; }
   .edit-post {
@@ -174,6 +177,7 @@ header {
     h1,h2,h3,h4,h5,h6 {
       text-align: center;
       line-height: 100%;
+      max-width: 100%;
     }
     .posted-at {
       text-align: center;
