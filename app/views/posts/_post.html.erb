@@ -16,9 +16,9 @@
         <%- if is_admin? -%>
           <span class="edit-post"><em><%= link_to 'edit', '/edit/' + post.id.to_s unless @preview %></em></span>
         <%- end -%>
-        <div class="posted-at">Posted on <%= post.created_at.to_formatted_s(:day_month_year) %>
-        </div>
        </h1>
+       <div class="posted-at"><%= post.created_at.strftime('%b %d, %Y') %>
+        </div>
       <div class="title-divider"></div>
     <%- end -%>
 
