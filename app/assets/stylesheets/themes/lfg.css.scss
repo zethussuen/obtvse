@@ -1,0 +1,203 @@
+* { box-sizing: border-box; }
+body {
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  font-family: freight, 'helvetica neue', helvetica, arial, sans-serif;
+  color: #343434;
+}
+
+p {
+  margin: 0;
+  line-height: 1.85;
+}
+
+.hero {
+  background-color: #121212;
+  background-image: image-url('sf.png');
+  background-size: fixed;
+  background-position: center center;
+  color: white;
+  position: relative;
+
+  .text-container {
+    text-align: center;
+    width: 650px;
+    margin: 0 auto;
+  }
+
+  .decor {
+    position: relative;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'tisa-pro';
+    font-size: em(22);
+    font-style: italic;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 0;
+      height: 1px;
+      width: 33.33333%;
+      background: rgba(255, 255, 255, 0.25);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      right: 0;
+      height: 1px;
+      width: 33.33333%;
+      background: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  .large {
+    text-transform: uppercase;
+    font-family: freight;
+    font-size: em(72);
+    font-weight: bold;
+  }
+}
+
+.portrait {
+  margin: 10px auto 0;
+  text-align: center;
+  width: 140px; height: 140px;
+  background: image-url('face.png');
+  border-radius: 100%;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.pulses {
+  width: 140px; height: 140px;
+  border-radius: 100%;
+  z-index: 99999;
+}
+
+$pulse: 4;
+$pulse-delay: 0s;
+@while $pulse > 0 {
+  .pulse#{$pulse} {
+    position: absolute;
+    top: -20px * $pulse; left: -20px * $pulse;
+    width: 140px + (40px * $pulse ); height: 140px + (40px * $pulse);
+    border: 1px solid #92bdff;
+    border-radius: 100%;
+    opacity: 0;
+    z-index: 99999;
+    @include box-shadow(inset 0 0 20px #92bdff);
+    @include animation(pulse#{$pulse} 5s infinite ease-in-out);
+    @include animation-fill-mode(both);
+    @include animation-delay($pulse-delay + ($pulse * 0.75));
+  }
+  $pulse: $pulse - 1;
+}
+
+/* Font Face Declarations */
+@include font-face(tisa-pro, 'tisa/tisa-regular', normal, normal, $asset-pipeline: true);
+@include font-face(tisa-pro, 'tisa/tisa-italic', normal, italic, $asset-pipeline: true);
+@include font-face(freight, 'freight/freight-regular', normal, normal, $asset-pipeline: true);
+@include font-face(freight, 'freight/freight-regular-italic', normal, italic, $asset-pipeline: true);
+@include font-face(freight, 'freight/freight-bold', bold, normal, $asset-pipeline: true);
+@include font-face(freight, 'freight/freight-bold-italic', bold, italic, $asset-pipeline: true);
+
+
+/* Scaffolding */
+.container {
+  width: 100%;
+  &.alt {
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}
+
+.section {
+  width: 650px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.intro-large {
+  font-size: em(32);
+  margin-bottom: 0.75em;
+}
+
+.intro {
+  font-size: em(22);
+  margin-bottom: 1em;
+  color: #909090;
+}
+
+.card-list {
+  list-style-type: none;
+  padding: 0;
+  .card {
+    display: inline-block;
+    width: 200px;
+    height: 162px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+
+    padding: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .card-inner {
+      overflow: hidden;
+    }
+  }
+}
+
+/* Animations */
+@include keyframes(pulse1) {
+  0% { opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+@include keyframes(pulse2) {
+  0% { opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0; }
+}
+
+@include keyframes(pulse3) {
+  0% { opacity: 0; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0; }
+}
+
+@include keyframes(pulse4) {
+  0% { opacity: 0; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mute {
+  opacity: 0.5;
+}
+
+.underline {
+  border-bottom: 1px dashed #b0b0b0;
+}

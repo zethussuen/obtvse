@@ -3,7 +3,7 @@
 <head>
   <title><%= html_title yield(:title) %></title>
   <%= csrf_meta_tag %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => false %>
+  <%= stylesheet_link_tag 'lfg' %>
   <meta name="author" content="<%= CONFIG['name'] %>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/posts.rss" rel="alternate" title="RSS" type="application/rss+xml" />
@@ -13,18 +13,9 @@
 </head>
 
 <body class="<%= controller_name %> <%= action_name %>">
-  <%= render :partial => 'application/header' %>
-
-  <div class="cover"></div>
-
-  <div class="container" id="container">
-    <div class="content" id="content">
-      <% if notice %><span class="notice"><%= notice %></span><% end %>
-      <%= yield %>
-    </div>
-  </div>
-
-  <%= javascript_include_tag 'application' %>
+  <%= yield %>
+  
+  <%= javascript_include_tag 'lfg' %>
 
   <% if CONFIG['google_analytics_id'] %>
     <!-- Google Analytics -->
@@ -35,14 +26,5 @@
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
   <% end %>
-
-  <script>
-    $(function(){
-      var random = Math.floor(Math.random()*3);
-      var images = ['bridge', 'bridge', 'bridge'];
-
-      $('.cover').css('background', 'url("/assets/cover-' + images[random] + '.jpg") no-repeat 75% center');
-    });
-  </script>
 </body>
 </html>

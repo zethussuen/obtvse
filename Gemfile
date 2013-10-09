@@ -1,23 +1,25 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 3'
+gem 'rake', '~> 10.1.0'
 
 # Extention libraries
 gem 'thin', '~> 1'
 
 # Rendering engines and vendor libraries
-gem 'jquery-rails', '~> 2'
+gem 'jquery-rails', '~> 3.0.4'
 gem 'redcarpet'
 
 # Misc libraries
 # gem 'bcrypt-ruby', '~> 3', require: 'bcrypt'
-gem 'stringex', '~> 1', git: 'git://github.com/rsl/stringex.git'
-gem 'kaminari', '~> 0.13'
+gem 'stringex', '~> 2.1.0'
+gem 'kaminari', '~> 0.14.1'
+gem 'bourbon', '~> 3.1.8'
 
 group :production do
   # gem 'newrelic_rpm', '~> 3'
   # gem 'dalli', '~> 1'
-  gem 'pg', '~> 0.13'
+  gem 'pg', '~> 0.17.0'
 end
 
 group :development do
@@ -45,5 +47,5 @@ end
 group :assets do
   gem 'sass-rails', '~> 3'
   gem 'coffee-rails', '~> 3'
-  gem 'uglifier', '~> 1'
+  gem 'uglifier', '~> 2.2.1'
 end
